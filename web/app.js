@@ -27,6 +27,11 @@ botonAgregar.addEventListener("click", () => {
 
 // Generar ticket
 botonTicket.addEventListener("click", () => {
+  if (precios.length === 0) {
+    resultado.innerText = "No hay productos en la compra.";
+    return;
+  }
+
   let total = 0;
 
   for (let precio of precios) {
@@ -34,6 +39,5 @@ botonTicket.addEventListener("click", () => {
   }
 
   const totalConIVA = total * 1.19;
-
   resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}`;
 });
