@@ -1,7 +1,7 @@
 // Estado de la aplicación
 let precios = [];
 
-// Puentes entre HTML y JS
+// Puentes entre HTML y JS 
 const inputPrecio = document.getElementById("precio");
 const botonAgregar = document.getElementById("agregar");
 const botonTicket = document.getElementById("ticket");
@@ -30,7 +30,9 @@ function limpiarCaja() {
 botonAgregar.addEventListener("click", () => {
   const valor = Number(inputPrecio.value);
 
-  if (valor <= 0) {
+  // Validación de entrada del usuario
+  if (!valor || valor <= 0) {
+    resultado.innerText = "Ingresa un precio válido.";
     return;
   }
 
@@ -41,6 +43,7 @@ botonAgregar.addEventListener("click", () => {
   lista.appendChild(item);
 
   inputPrecio.value = "";
+  resultado.innerText = "";
 });
 
 // Generar ticket
@@ -51,8 +54,7 @@ botonTicket.addEventListener("click", () => {
   }
 
   const totalConIVA = calcularTotalConIVA(precios);
-  resultado.innerText =
-    `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra.`;
+  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra.`;
 
   limpiarCaja();
 });
