@@ -1,36 +1,36 @@
 # 🧾 Caja Registradora en JavaScript
 
-Este proyecto simula la lógica básica de una caja registradora.
+Proyecto de aprendizaje que simula el funcionamiento básico de una *caja registradora, separando correctamente la **lógica del negocio* y la *interfaz web*.
 
-Permite:
-- Sumar precios de productos
-- Calcular el subtotal
-- Aplicar IVA (19%)
-- Aplicar descuento si el monto supera cierto valor
-- Mostrar un “ticket” en consola con el resultado final
+Este proyecto forma parte de mi proceso para convertirme en *Desarrollador Junior con bases sólidas, enfocándome en entender el *porqué de cada decisión y no solo en que “funcione”.
 
-Es parte de mi ruta de aprendizaje como desarrollador junior, enfocado en:
-- Lógica de programación
-- JavaScript desde cero
-- Código limpio
-- Uso real de Git y GitHub
+---
+
+## 🎯 Objetivos de aprendizaje
+
+- 🧠 Comprender la lógica de una aplicación real
+- 🧩 Separar lógica de negocio e interfaz
+- ⚙️ Practicar JavaScript desde cero
+- 🌐 Manipular el DOM con JavaScript
+- 📂 Organizar un proyecto como en un entorno profesional
+- 🌱 Usar Git y GitHub de forma real (commits por etapas)
+
+---
 
 ## 📂 Estructura del proyecto
 
-- subtotal.js  
-  Calcula el total de una lista de precios.
-
-- descuento.js  
-  Contiene la lógica para aplicar descuentos por monto.
-
-- ticket.js  
-  Une todo: subtotal, IVA y descuento, y muestra un ticket en consola.
-
-## ▶️ Cómo ejecutarlo
-
-Tener Node.js instalado.
-
-Desde la carpeta del proyecto:
-
-```bash
-node ticket.js
+```text
+CAJA-REGISTRADORA-JS/
+│
+├── logica/              # Lógica de negocio (JavaScript puro)
+│   ├── caja.js          # Punto central de la lógica
+│   ├── subtotal.js      # Cálculo del subtotal
+│   ├── descuento.js     # Reglas de descuento
+│   └── ticket.js        # Generación del ticket en consola
+│
+├── web/                 # Interfaz web
+│   ├── index.html       # Estructura HTML
+│   ├── app.js           # Lógica del DOM
+│   └── style.css        # Estilos CSS
+│
+└── README.md            # Documentación del proyecto
