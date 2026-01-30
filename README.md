@@ -1,8 +1,8 @@
 # 🧾 Caja Registradora en JavaScript
 
-Proyecto de aprendizaje que simula el funcionamiento básico de una *caja registradora, separando correctamente la **lógica del negocio* y la *interfaz web*.
+Proyecto de aprendizaje que simula el funcionamiento básico de una *caja registradora, separando correctamente la *lógica del negocio* y la *interfaz web*.
 
-Este proyecto forma parte de mi proceso para convertirme en *Desarrollador Junior con bases sólidas, enfocándome en entender el *porqué de cada decisión y no solo en que “funcione”.
+Este proyecto forma parte de mi proceso para convertirme en *Desarrollador Junior con bases sólidas, enfocándome en entender el porqué de cada decisión y no solo en que “funcione”.*
 
 ---
 
