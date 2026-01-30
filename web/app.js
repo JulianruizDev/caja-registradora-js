@@ -24,3 +24,16 @@ botonAgregar.addEventListener("click", () => {
 
   inputPrecio.value = "";
 });
+
+// Generar ticket
+botonTicket.addEventListener("click", () => {
+  let total = 0;
+
+  for (let precio of precios) {
+    total += precio;
+  }
+
+  const totalConIVA = total * 1.19;
+
+  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}`;
+});
