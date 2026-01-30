@@ -1,14 +1,32 @@
-//Estado de la aplicación
+// Estado de la aplicación
 let precios = [];
 
-// Puente entre la interfaz y la lógica
+// Puentes entre HTML y JS
 const inputPrecio = document.getElementById("precio");
 const botonAgregar = document.getElementById("agregar");
 const botonTicket = document.getElementById("ticket");
 const lista = document.getElementById("lista");
 const resultado = document.getElementById("resultado");
 
-//Agregar producto
+// Calcula el total con IVA
+function calcularTotalConIVA(listaPrecios) {
+  let total = 0;
+
+  for (let precio of listaPrecios) {
+    total += precio;
+  }
+
+  return total * 1.19;
+}
+
+// Limpia el estado de la caja
+function limpiarCaja() {
+  precios = [];
+  lista.innerHTML = "";
+  inputPrecio.value = "";
+}
+
+// Agregar producto
 botonAgregar.addEventListener("click", () => {
   const valor = Number(inputPrecio.value);
 
@@ -19,7 +37,7 @@ botonAgregar.addEventListener("click", () => {
   precios.push(valor);
 
   const item = document.createElement("li");
-  item.innerText = `$ ${valor}`;
+  item.innerText = `Precio: $${valor}`;
   lista.appendChild(item);
 
   inputPrecio.value = "";
@@ -32,15 +50,9 @@ botonTicket.addEventListener("click", () => {
     return;
   }
 
-  let total = 0;
+  const totalConIVA = calcularTotalConIVA(precios);
+  resultado.innerText =
+    `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra.`;
 
-  for (let precio of precios) {
-    total += precio;
-  }
-
-const totalConIVA = total * 1.19;
-  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra. `;
-
-  precios = [];
-  lista.innerHTML = "";
+  limpiarCaja();
 });
