@@ -38,6 +38,9 @@ botonTicket.addEventListener("click", () => {
     total += precio;
   }
 
-  const totalConIVA = total * 1.19;
-  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}`;
+const totalConIVA = total * 1.19;
+  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra. `;
+
+  precios = [];
+  lista.innerHTML = "";
 });
