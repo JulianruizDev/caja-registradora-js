@@ -1,19 +1,30 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
   padding: 20px;
+  border-radius: 8px;
 }
 
 h1 {
   text-align: center;
 }
 
-input, button {
+input {
+  width: 100%;
   padding: 8px;
-  margin: 5px 0;
+  margin-bottom: 10px;
 }
 
 button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -23,13 +34,5 @@ ul {
 }
 
 li {
-  background: #fff;
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 4px;
-}
-
-#resultado {
-  margin-top: 10px;
-  font-weight: bold;
+  padding: 5px 0;
 }
