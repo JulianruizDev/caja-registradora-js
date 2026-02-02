@@ -1,38 +1,18 @@
 // Estado de la aplicación
 let precios = [];
 
-// Puentes entre HTML y JS 
+// Puentes entre HTML y JS
 const inputPrecio = document.getElementById("precio");
 const botonAgregar = document.getElementById("agregar");
 const botonTicket = document.getElementById("ticket");
 const lista = document.getElementById("lista");
 const resultado = document.getElementById("resultado");
 
-// Calcula el total con IVA
-function calcularTotalConIVA(listaPrecios) {
-  let total = 0;
-
-  for (let precio of listaPrecios) {
-    total += precio;
-  }
-
-  return total * 1.19;
-}
-
-// Limpia el estado de la caja
-function limpiarCaja() {
-  precios = [];
-  lista.innerHTML = "";
-  inputPrecio.value = "";
-}
-
 // Agregar producto
 botonAgregar.addEventListener("click", () => {
   const valor = Number(inputPrecio.value);
 
-  // Validación de entrada del usuario
-  if (!valor || valor <= 0) {
-    resultado.innerText = "Ingresa un precio válido.";
+  if (valor <= 0) {
     return;
   }
 
@@ -43,7 +23,6 @@ botonAgregar.addEventListener("click", () => {
   lista.appendChild(item);
 
   inputPrecio.value = "";
-  resultado.innerText = "";
 });
 
 // Generar ticket
@@ -53,8 +32,16 @@ botonTicket.addEventListener("click", () => {
     return;
   }
 
-  const totalConIVA = calcularTotalConIVA(precios);
-  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}\nGracias por su compra.`;
+  let total = 0;
 
-  limpiarCaja();
+  for (let precio of precios) {
+    total += precio;
+  }
+
+  const totalConIVA = total * 1.19;
+  resultado.innerText = `Total con IVA: $${totalConIVA.toFixed(2)}`;
+
+  // Reiniciar caja
+  precios = [];
+  lista.innerHTML = "";
 });
